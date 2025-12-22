@@ -5,12 +5,18 @@ import { useEffect, useState } from "react";
 import cloudPNG from '../../../public/cloud.png'
 
 export default function StartHomePage(){
+    const [viewPNG, setViewPNG] = useState(false);
+
     // Ozgina scroll bo'lganda Header orqa rangini o'zgartirishi uchun
     const [scrollY, setScrollY] = useState(0)
     useEffect(() => {
         window.addEventListener('scroll', () => {
             setScrollY(window.scrollY);
-        })
+        });
+
+        setTimeout(() => {
+            setViewPNG(true)
+        }, 1000)
     }, [])
 
     return <div className="w-full min-h-screen bg-[linear-gradient(180deg,#010336_0%,#0a0f2c_40%,#020617_100%)] text-white">
@@ -44,9 +50,24 @@ export default function StartHomePage(){
 
 
             <div className={`fixed bottom-0 right-0 w-full flex items-center justify-between`}>
-                <img src={cloudPNG} alt="" className={`${scrollY > 0 ? `translate-x-[-100%] translate-y-[20%]` : `translate-x-[-20px] translate-y-[10px]`} w-[40%] scale-x-[-1] transition-all duration-1000`}/>
-                <img src={cloudPNG} alt="" className={`${scrollY > 0 ? `translate-x-[100%] translate-y-[20%]` : `translate-x-[20px] translate-y-[10px]`} w-[40%] transition-all duration-1000`}/>
-                {console.log(scrollY)}
+                <img 
+                    src={cloudPNG} 
+                    alt="" 
+                    className={`
+                        ${viewPNG ? 'translate-x-[-20px]' : 'translate-x-[-100%]'} 
+                        ${scrollY > 0 ? `translate-x-[-100%] translate-y-[20%]` : `translate-x-[-20px] translate-y-[10px]`} 
+                        w-[40%] scale-x-[-1] transition-all duration-1000`
+                    }
+                />
+                <img 
+                    src={cloudPNG} 
+                    alt="" 
+                    className={`
+                        ${viewPNG ? 'translate-x-[20px]' : 'translate-x-[100%]'} 
+                        ${scrollY > 0 ? `translate-x-[100%] translate-y-[20%]` : `translate-x-[20px] translate-y-[10px]`} 
+                        w-[40%] transition-all duration-1000`
+                    }
+                />
             </div>
 
         </div>
