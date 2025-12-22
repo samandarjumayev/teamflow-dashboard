@@ -2,6 +2,7 @@ import { ChevronRight } from "lucide-react";
 import StartHeader from "../../shared/components/StartHeader";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import cloudPNG from '../../../public/cloud.png'
 
 export default function StartHomePage(){
     // Ozgina scroll bo'lganda Header orqa rangini o'zgartirishi uchun
@@ -43,8 +44,8 @@ export default function StartHomePage(){
 
 
             <div className={`fixed bottom-0 right-0 w-full flex items-center justify-between`}>
-                <img src="../../../public/cloud.png" alt="" className={`${scrollY > 0 ? `translate-x-[-100%] translate-y-[20%]` : `translate-x-[-20px] translate-y-[10px]`} w-[40%] scale-x-[-1] transition-all duration-1000`}/>
-                <img src="../../../public/cloud.png" alt="" className={`${scrollY > 0 ? `translate-x-[100%] translate-y-[20%]` : `translate-x-[20px] translate-y-[10px]`} w-[40%] transition-all duration-1000`}/>
+                <img src={cloudPNG} alt="" className={`${scrollY > 0 ? `translate-x-[-100%] translate-y-[20%]` : `translate-x-[-20px] translate-y-[10px]`} w-[40%] scale-x-[-1] transition-all duration-1000`}/>
+                <img src={cloudPNG} alt="" className={`${scrollY > 0 ? `translate-x-[100%] translate-y-[20%]` : `translate-x-[20px] translate-y-[10px]`} w-[40%] transition-all duration-1000`}/>
                 {console.log(scrollY)}
             </div>
 
