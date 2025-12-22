@@ -18,11 +18,13 @@ export const router = createBrowserRouter([
             { path: '/', element: <AuthLayout /> },
             { path: '/login', element: <Login /> },
             { path: '/signup', element: <Register /> },
+            // Protect pages 👇🏻
             { path: '/team', element: (<ProtectedRouter> <Team /> </ProtectedRouter>) },
             { path: '/tasks', element: (<ProtectedRouter> <Tasks /> </ProtectedRouter>) },
             { path: '/settings', element: (<ProtectedRouter> <Settings /> </ProtectedRouter>) },
             { path: '/files', element: (<ProtectedRouter> <Files /> </ProtectedRouter>) },
             { path: '/dashboard', element: (<ProtectedRouter> <Dashboard /> </ProtectedRouter>) },
+            // /Protect pages 👆🏻
         ]
     },
 ])
