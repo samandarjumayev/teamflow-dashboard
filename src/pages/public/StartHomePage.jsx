@@ -1,12 +1,22 @@
-import { ChevronRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import StartHeader from "../../shared/components/StartHeader";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import cloudPNG from '../../../public/cloud.png'
 import codingVideo from '../../../public/videos/coding.mp4'
+import HomeSliderBrends from "../../shared/ui/HomeSliderBrends";
+import Footer from "../../shared/components/Footer";
 
 export default function StartHomePage(){
     const [viewPNG, setViewPNG] = useState(false);
+
+    // Contacts Informations
+    const contacts = [
+        { icon: 'https://cdn-icons-png.flaticon.com/128/2111/2111646.png', label: 'Telegram', color: 'text-blue-400', toLink: 'https://t.me/developersamandar' },
+        { icon: 'https://cdn-icons-png.flaticon.com/128/174/174855.png', label: 'Instagram', color: 'text-pink-400', toLink: 'https://instagram.com/developer_samandar' },
+        { icon: 'https://cdn-icons-png.flaticon.com/128/270/270798.png', label: 'GitHub', color: 'text-gray-400', toLink: 'https://github.com/samandarjumayev' },
+        { icon: 'https://cdn-icons-png.flaticon.com/128/15047/15047587.png', label: 'E-mail', color: 'text-red-400' }
+    ];
 
     // Ozgina scroll bo'lganda Header orqa rangini o'zgartirishi uchun
     const [scrollY, setScrollY] = useState(0)
@@ -57,6 +67,7 @@ export default function StartHomePage(){
                 </div>
             </div>
 
+            {/* Clouds */}
             <div className={`fixed bottom-0 right-0 w-full flex items-center justify-between`}>
                 <img 
                     src={cloudPNG} 
@@ -80,6 +91,7 @@ export default function StartHomePage(){
 
         </div>
 
+        {/* Video component */}
         <div style={{
             boxShadow: '#212044 0px 24px 30px -10px',
         }}>
@@ -98,6 +110,7 @@ export default function StartHomePage(){
         </div>
 
         <div className="w-full h-[100px]"></div>
-        
+        {/* <HomeSliderBrends /> */}
+        <Footer />
     </div>
 }
