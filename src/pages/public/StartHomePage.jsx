@@ -3,7 +3,7 @@ import StartHeader from "../../shared/components/StartHeader";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import cloudPNG from '../../../public/cloud.png'
-import video from '../../../public/videos/Mirjalol Nematov - Malak.mp4'
+import codingVideo from '../../../public/videos/coding.mp4'
 
 export default function StartHomePage(){
     const [viewPNG, setViewPNG] = useState(false);
@@ -80,17 +80,24 @@ export default function StartHomePage(){
 
         </div>
 
-        <div className={`relative w-full border min-h-[500px] px-[32px] max-w-[1100px] mx-auto`}>
-            <div>
-                <video 
-                    src={video} 
-                    autoPlay 
-                    loop 
-                    muted
-                    playsInline
-                ></video>
+        <div style={{
+            boxShadow: '#212044 0px 24px 30px -10px',
+        }}>
+            <div className={`relative w-full px-[32px] max-w-[1250px] mx-auto`}>
+                <div className="h-[700px] border-t border-l border-r border-[#8c93fb] p-5 pb-0 bg-[#272847] rounded-tl-3xl rounded-tr-3xl">
+                    <video 
+                        src={codingVideo} 
+                        autoPlay 
+                        loop 
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover rounded-tl-xl rounded-tr-xl"
+                    ></video>
+                </div>
             </div>
         </div>
+
+        <div className="w-full h-[100px]"></div>
         
     </div>
 }
